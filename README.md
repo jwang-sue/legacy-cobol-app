@@ -1,47 +1,4 @@
-# Modernizing  a Cobol accounting system to a Node.js application using GitHub Copilot
-
-This repo contains COBOL code for a simple accounting system. You can use GitHub Copilot to transform this code to a Node.js accounting system.
-
-**Note: Keep in mind GitHub Copilot is an AI pair programmer that helps you write code. It is not a code generator and is using generative
-models trained on public code. It may provide completions that are not perfect, safe, or otherwise suitable for production. Always review suggestions
-and take a trust but verify approach.**
-
-<img src="images/cobol_to_nodejs.png" alt="Cobol to Node.js" width="800"/>
-
-## Prerequisites
-
-- Basic understanding of programming concepts.
-- Basic understanding of the COBOL programming language.
-- GitHub Copilot or GitHub Copilot Chat installed in your IDE or GitHub Codespace.
-
-## Setup the development environment
-
-### Option 1: Use an IDE that supports GitHub Copilot
-
-- IDE options for both GitHub Copilot and Copilot Chat:
-  - <img src="images/ide-vscode.png" alt="Visual Studio Code" width="20"/> Visual Studio Code
-  - <img src="images/ide-vs.png" alt="Visual Studio" width="20"/> Visual Studio
-  - <img src="images/ide-jetbrains.png" alt="JetBrains IDE" width="20"/> JetBrains IDE
-
-#### For Visual Studio Code
-
-- Install the GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code.
-- Install the COBOL extension for Visual Studio Code.
-
-### Option 2: Use a GitHub codespace
-
-- Create a new codespace in this repository. </br>
-![Codespace](images/codespace.png)
-
-- The configuration for the codespace is already set up with the required extensions.
-  - GitHub Copilot
-  - GitHub Copilot Chat
-  - COBOL
-  - Markdown All in One
-  - Mermaid Markdown
-  - python
-
-## About the program
+# About the program
 
 This COBOL program simulates an account management system. This program will involve multiple COBOL source files and perform various operations like crediting, debiting, viewing the balance, and even exiting the program. Here’s how you its structured:
 
@@ -132,10 +89,6 @@ This multi-file structure introduces modularity, making it easier to manage and 
 
 ### Data flow
 
-```text
-@workspace can you create a sequence diagram of the app showing the data flow of the app. Please create this in mermaid format so that I can render this in a markdown file.
-```
-
 ```mermaid
 sequenceDiagram
     participant User
@@ -186,81 +139,6 @@ sequenceDiagram
         MainProgram->>MainProgram: MOVE 'NO' TO CONTINUE-FLAG
         MainProgram->>User: DISPLAY "Exiting the program. Goodbye!"
     end
-```
-
-## Generate a test plan
-
-```text
-@workspace The current Cobol app has no tests. Can you please create a test plan of current business logic that I can use to validate with business stakeholders about the current implementation.
-Later I would like to use this test plan to create unit and integration tests in a node.js app. I am in the middle of transforming the current Cobol app to a node.js app.
-The test plan should include the following:
-
-1. Test Case ID
-2. Test Case Description
-3. Pre-conditions
-4. Test Steps
-5. Expected Result
-6. Actual Result
-7. Status (Pass/Fail)
-8. Comments
-
-Please create the test plan in a markdown table format. The test plan should cover all the business logic in the current Cobol app.
-```
-
-### Note
-
-*You may still need follow up with another prompt to generate the markdown file format for the test plan.*
-
-```markdown
-Convert this to markdown syntax please to insert as a new file
-```
-
-## Convert files using prompt engineering best practices
-
-### Create the Node.js project directory
-
-```bash
-mkdir node-accounting-app
-cd node-accounting-app
-```
-
-### Use GitHub Copilot to convert the files iteratively
-
-#### Convert main.cob to main.js
-
-#### Convert operations.cob to operations.js
-
-#### Convert data.cob to data.js
-
-```text
-Let's link all node.js files to work together in one accounting application, and then initialize, install dependencies, and run the application.
-```
-
-### Initialize a new Node.js project
-
-```bash
-npm init -y
-```
-
-### Install the Node.js app
-
-```bash
-npm install
-
-```
-
-### Run the Node.js app
-
-```bash
-node main.js
-```
-
-### Generate unit and integration tests
-
-```text
-@workspace I would like to create unit and integration tests cases form the test plan mentioned in
-#file:TESTPLAN.md file The node.js code is in node-accounting-app folder and I am looking to generate tests
-for #file:operations.js file. Use a popular testing framework and also provide all the dependencies required to run the tests.
 ```
 
 ## License
